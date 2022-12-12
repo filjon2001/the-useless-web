@@ -10,7 +10,9 @@ body {
   visibility: hidden;
   height: 100vh;
   position: relative;
+  z-index: 3;
   animation: hide-text 4s;
+  transition: 1s ease-in;
 }
 
 @keyframes hide-text {
@@ -22,7 +24,12 @@ body {
   }
 }
 
+.play-animation {
+  animation: hide-text 4s;
+}
+
 h1 {
+  width: 100%;
   color: aliceblue;
   text-align: center;
   font-family: 'Noto Sans Chakma', sans-serif;
@@ -32,6 +39,8 @@ h1 {
 
 button {
   cursor: pointer;
-  background-color: black;
+  background-color: inherit;
   border: none;
+  width: 8rem;
+  height: 8rem;
 }

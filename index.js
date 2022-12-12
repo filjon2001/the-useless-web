@@ -1,3 +1,6 @@
+const heading = document.querySelector('h1');
+const main = document.querySelector('.main');
+
 function getRandomPosition(body) {
   const x = document.body.offsetHeight - body.clientHeight;
   const y = document.body.offsetWidth - body.clientWidth;
@@ -5,6 +8,7 @@ function getRandomPosition(body) {
   const randomY = Math.floor(Math.random() * y);
   return [randomX, randomY];
 }
+
 window.onload = function () {
   const button = document.createElement('button');
   const colors = [
@@ -29,42 +33,54 @@ window.onload = function () {
     '#B8CF51',
     '#60C445',
   ];
+
+  const phrases = [
+    {
+      phrase: 'YES YOU FOUND IT! But where is it now?',
+    },
+    {
+      phrase: 'There it was! Now then?',
+    },
+    {
+      phrase: 'There was the button... Can you find it again?',
+    },
+    {
+      phrase: 'Great! One more time!',
+    },
+  ];
+
+  const getRandomPhrase = function () {
+    const random = Math.floor(Math.random() * phrases.length);
+
+    const randomPhrase = phrases[random].phrase;
+
+    return randomPhrase;
+  };
+
   let changeColor = 0;
 
   button.setAttribute('style', 'position:absolute;');
   document.body.appendChild(button);
-  var xy = getRandomPosition(button);
+  const xy = getRandomPosition(button);
   button.style.top = xy[0] + 'px';
   button.style.left = xy[1] + 'px';
-  button.addEventListener('click', () => {
-    document.body.style.backgroundColor = colors[changeColor];
-    changeColor++;
-    if (changeColor > colors.length) {
-      changeColor = 0;
+
+  button.addEventListener('click', (event) => {
+    if ((event = true)) {
+      document.body.style.backgroundColor = colors[changeColor];
+      changeColor++;
+      if (changeColor > colors.length) {
+        changeColor = 0;
+      }
+      const xy = getRandomPosition(button);
+      button.style.top = xy[0] + 'px';
+      button.style.left = xy[1] + 'px';
+
+      heading.textContent = getRandomPhrase();
+      main.style.animation = 'none';
+      setTimeout(() => {
+        main.style.animation = '';
+      }, 10);
     }
   });
 };
-
-/* function refreshPage() {
-  if (true) {
-    return window.location.reload();
-  }
-} */
-
-/* 
-const colors = ['#F08080', '#DE3163', '#40E0D0'];
-
-const button = document.querySelector('button');
-
-let changeColor = 0;
-
-button.addEventListener('click', () => {
-  document.body.style.backgroundColor = colors[changeColor];
-
-  changeColor++;
-
-  if (changeColor > colors.length) {
-    changeColor = 0;
-  }
-});
- */
