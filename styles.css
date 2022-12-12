@@ -44,3 +44,22 @@ button {
   width: 8rem;
   height: 8rem;
 }
+
+.symbol {
+  position: absolute;
+  font-size: 2rem;
+  color: black;
+  transition: ease-out 2s;
+  animation: fade-out 4s forwards;
+  z-index: 4;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

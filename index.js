@@ -1,5 +1,6 @@
 const heading = document.querySelector('h1');
 const main = document.querySelector('.main');
+const symbolSelector = document.querySelectorAll('.symbol');
 
 function getRandomPosition(body) {
   const x = document.body.offsetHeight - body.clientHeight;
@@ -66,7 +67,7 @@ window.onload = function () {
   button.style.left = xy[1] + 'px';
 
   button.addEventListener('click', (event) => {
-    if ((event = true)) {
+    if (event) {
       document.body.style.backgroundColor = colors[changeColor];
       changeColor++;
       if (changeColor > colors.length) {
@@ -84,3 +85,16 @@ window.onload = function () {
     }
   });
 };
+
+const symbols = ['❋', '❆', '✿', '✺', '✵', '❀', '✽', '❉', '❁'];
+
+symbols.forEach((symbol, index) => {
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('symbol');
+  const xy = getRandomPosition(wrapper);
+  wrapper.textContent = symbol;
+  wrapper.style.top = xy[0] + 'px';
+  wrapper.style.left = xy[1] + 'px';
+
+  document.body.append(wrapper);
+});
