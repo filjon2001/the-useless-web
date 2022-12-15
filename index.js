@@ -1,6 +1,9 @@
 const heading = document.querySelector('h1');
 const main = document.querySelector('.main');
-const symbolSelector = document.querySelectorAll('.symbol');
+const clue = document.createElement('h2');
+clue.classList.add('hidden');
+clue.textContent = "Didn't you see it?!";
+document.body.append(clue);
 
 function getRandomPosition(body) {
   const x = document.body.offsetHeight - body.clientHeight;
@@ -48,6 +51,15 @@ window.onload = function () {
     {
       phrase: 'Great! One more time!',
     },
+    {
+      phrase: "You're good! Do it again!",
+    },
+    {
+      phrase: 'Oh yes! Find it again, please.',
+    },
+    {
+      phrase: "That's the spirit! Now it's somewhere else.",
+    },
   ];
 
   const getRandomPhrase = function () {
@@ -66,6 +78,12 @@ window.onload = function () {
   button.style.top = xy[0] + 'px';
   button.style.left = xy[1] + 'px';
 
+  button.addEventListener('mouseover', () => {
+    const clueTimer = setTimeout(() => {
+      clue.style.visibility = 'visible';
+    }, 400);
+  });
+
   button.addEventListener('click', (event) => {
     if (event) {
       document.body.style.backgroundColor = colors[changeColor];
@@ -73,6 +91,11 @@ window.onload = function () {
       if (changeColor > colors.length) {
         changeColor = 0;
       }
+
+      if (event) {
+        clue.style.visibility = 'hidden';
+      }
+
       const xy = getRandomPosition(button);
       button.style.top = xy[0] + 'px';
       button.style.left = xy[1] + 'px';
@@ -85,6 +108,8 @@ window.onload = function () {
     }
   });
 };
+
+console.log(clue.classList);
 
 const symbols = ['❋', '❆', '✿', '✺', '✵', '❀', '✽', '❉', '❁'];
 

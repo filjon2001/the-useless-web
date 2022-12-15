@@ -35,14 +35,30 @@ h1 {
   font-family: 'Noto Sans Chakma', sans-serif;
   font-size: 7rem;
   letter-spacing: 0.2rem;
+  position: absolute;
+  z-index: 5;
+}
+
+h2 {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  color: aliceblue;
+  text-align: center;
+  font-family: 'Noto Sans Chakma', sans-serif;
+  font-size: 7rem;
+  letter-spacing: 0.2rem;
+  z-index: 4;
 }
 
 button {
+  position: absolute;
   cursor: pointer;
   background-color: inherit;
   border: none;
   width: 8rem;
   height: 8rem;
+  z-index: 1;
 }
 
 .symbol {
@@ -51,7 +67,16 @@ button {
   color: black;
   transition: ease-out 2s;
   animation: fade-out 4s forwards;
-  z-index: 4;
+  z-index: 2;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+clue {
+  position: absolute;
+  z-index: 3;
 }
 
 @keyframes fade-out {
