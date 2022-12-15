@@ -1,12 +1,13 @@
 INSERT MANDATORY GIF
 
-# Project Title
+# Find the lost button...
 
-Text about the project. This would also be a great place to link the game on Netlify.
+You know the feeling of finding something you've been looking for for a long time? Click here and feel the satisfaction (or frustration):
+https://find-the-lost-button.netlify.app
 
 # Installation
 
-Add the installation instructions.
+Somewhere on the page is a lost button. If you hover the button, a clue might appear...
 
 # Code Review
 
@@ -20,5 +21,5 @@ Add the installation instructions.
 
 Tested by the following people:
 
-1. Jane Doe
-2. John Doe
+1. Vali Al Osachi
+2. Emma Hedlund
