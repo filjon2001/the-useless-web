@@ -1,4 +1,4 @@
-<iframe src="https://giphy.com/embed/kNwQN4ueScpbaeWtef" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/netflix-season-1-episode-squid-game-kNwQN4ueScpbaeWtef">via GIPHY</a></p>
+<img src="https://media4.giphy.com/media/kNwQN4ueScpbaeWtef/giphy.gif?cid=ecf05e47ei4vry2i9y10hipoguuoshjs4l55j506szgexuey&rid=giphy.gif&ct=g">
 
 # Find the lost button...
 
