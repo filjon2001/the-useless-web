@@ -1,3 +1,29 @@
+/* Makes the text hide */
+@keyframes hide-text {
+  from {
+    visibility: visible;
+  }
+  to {
+    visibility: hidden;
+  }
+}
+
+/* Makes the symbols hide, fading out */
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Sets the time for the animation */
+.play-animation {
+  animation: hide-text 4s;
+}
+
 body {
   background-color: red;
   height: 100vh;
@@ -12,20 +38,10 @@ body {
   position: relative;
   z-index: 3;
   animation: hide-text 4s;
-  transition: 1s ease-in;
 }
 
-@keyframes hide-text {
-  from {
-    visibility: visible;
-  }
-  to {
-    visibility: hidden;
-  }
-}
-
-.play-animation {
-  animation: hide-text 4s;
+.hidden {
+  visibility: hidden;
 }
 
 h1 {
@@ -51,9 +67,15 @@ h2 {
   z-index: 4;
 }
 
+clue {
+  position: absolute;
+  z-index: 3;
+}
+
 button {
   position: absolute;
   cursor: pointer;
+  /* Styling the button, so it's the same color as the background. */
   background-color: inherit;
   border: none;
   width: 8rem;
@@ -65,26 +87,7 @@ button {
   position: absolute;
   font-size: 2rem;
   color: black;
-  transition: ease-out 2s;
+  /* The symbols fades out and stays that way using "forwards".  */
   animation: fade-out 4s forwards;
   z-index: 2;
-}
-
-.hidden {
-  visibility: hidden;
-}
-
-clue {
-  position: absolute;
-  z-index: 3;
-}
-
-@keyframes fade-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
 }
