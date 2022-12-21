@@ -11,11 +11,11 @@ Somewhere on the page is a lost button. If you hover the button, a clue might ap
 
 # Code Review
 
-1. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-1. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-1. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-1. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-1. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
+
+1 % 2 . `styles.css:72 & styles.css:83` - I had the button spawn but the clue showed up and blocked my ability to press it. Consider switching these z-index-numbers or have the button not spawn at the same place as clue.
+3. `styles.css` - The above has a high risk of happening while in mobile view. Consider adding some mediaquery to alleviate this. 
+4. `styles.css` - Also, for me using firefox at least, some words in the intro text are being cut out the top. Could use a query for this too.
+5. `index.js` - No comment with the code but I'd switch some blocks around to better feel the order of things happening. Or perhaps split the arrays or functions off into their own file. 
 
 # Testers
 
